@@ -7,7 +7,7 @@ interface ArticleCRUDinterface
 {
     public function ShowItems($id);
 
-    public function CreateArticle();
+    public function CreateArticle($date);
 
     public function DeleteArticle($id);
 

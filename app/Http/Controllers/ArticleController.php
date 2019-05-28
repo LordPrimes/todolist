@@ -20,6 +20,7 @@ class ArticleController extends Controller
     public function items()
     {
        $view = $this->model->Show();
+
        return view('welcome')->with('view', $view);
     }
 
@@ -29,5 +30,21 @@ class ArticleController extends Controller
 
         return view('items')->with('items', $items);
 
+    }
+
+    public function create(Request $request)
+    {
+        $createitems = $this->model->CreateArticle(['title' => $request->input('title'),
+                                                    'description' =>  $request->input('description')                                                              
+        ]);
+
+       return redirect()->back();
+    }
+
+    public function delet($id)
+    {
+       $deletitems = $this->model->DeleteArticle($id);
+
+       return redirect()->back();
     }
 }

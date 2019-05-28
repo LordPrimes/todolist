@@ -22,10 +22,16 @@ class CRUDRepositories implements ArticleCRUDinterface
 
     public function ShowItems($id){
 
-        $this->model->find($id);
+       return $this->model->where('id', $id)->get();
     }
 
-    public function CreateArticle(){}
+    public function CreateArticle($date){
 
-    public function DeleteArticle($id){}
+        return $this->model->create($date);
+    }
+
+    public function DeleteArticle($id){
+
+        return $this->model->destroy($id);
+    }
 }

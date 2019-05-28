@@ -12,4 +12,6 @@
 */
 
 Route::get('/', 'ArticleController@items');
-Route::get('/{id}','ArticleController@showitem');
+Route::get('/{id}','ArticleController@showitem')->name('items');
+Route::post('/{create}','ArticleController@create')->name('create');
+Route::delete('/{delet}','ArticleController@delet')->name('delet');
